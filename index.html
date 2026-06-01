@@ -3,60 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sub-Project Completion Countdown for KKB-CDD</title>
+<title>Countdown to October 31, 2026</title>
 
 <style>
 body{
     margin:0;
-    font-family:Arial, sans-serif;
     background:#111;
+    color:white;
+    font-family:Arial, sans-serif;
 }
 
+/* Fixed at top center */
 .container{
     position:fixed;
-    top:10px;
+    top:15px;
     left:50%;
     transform:translateX(-50%);
-    z-index:9999;
     text-align:center;
+    z-index:9999;
+    padding:10px;
 }
 
 h1{
-    margin-bottom:15px;
-    font-size:1.8rem;
+    margin:0 0 10px 0;
+    font-size:1.5rem;
+    text-shadow:0 0 10px rgba(255,255,255,0.4);
 }
 
 #countdown{
     display:flex;
     justify-content:center;
     gap:10px;
-    flex-wrap:wrap;
+    flex-wrap:nowrap;
 }
 
 .time-box{
-    background:rgba(0,0,0,0.8);
-    color:white;
-    padding:10px 15px;
+    background:rgba(34,34,34,0.9);
+    padding:12px;
     border-radius:10px;
     min-width:90px;
-    box-shadow:0 0 10px rgba(255,255,255,0.2);
+    box-shadow:0 0 10px rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.1);
 }
 
 .number{
     font-size:2rem;
     font-weight:bold;
+    line-height:1;
 }
 
 .label{
     font-size:0.8rem;
+    margin-top:5px;
     color:#ccc;
+    text-transform:uppercase;
 }
 </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Sub-Project Completion Countdown for KKB-CDD</h1>
+    <h1>Countdown to October 31, 2026</h1>
 
     <div id="countdown">
         <div class="time-box">
