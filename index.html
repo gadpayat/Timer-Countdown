@@ -13,7 +13,7 @@ body{
     font-family:Arial, sans-serif;
 }
 
-/* Fixed at top center */
+/* Top-center container */
 .container{
     position:fixed;
     top:15px;
@@ -58,14 +58,39 @@ h1{
     color:#ccc;
     text-transform:uppercase;
 }
+
+/* Button below timer */
+.button-container{
+    margin-top:15px;
+}
+
+.nav-btn{
+    background:#ff0000;
+    color:white;
+    border:none;
+    padding:12px 24px;
+    font-size:18px;
+    border-radius:8px;
+    cursor:pointer;
+    box-shadow:0 0 10px red;
+    transition:all 0.3s ease;
+}
+
+.nav-btn:hover{
+    background:#cc0000;
+    transform:scale(1.05);
+    box-shadow:0 0 20px red;
+}
 </style>
 </head>
 <body>
 
 <div class="container">
+
     <h1>Sub-Project Completion Countdown for KKB-CDD</h1>
 
     <div id="countdown">
+
         <div class="time-box">
             <div class="number" id="days">0</div>
             <div class="label">Days</div>
@@ -85,13 +110,24 @@ h1{
             <div class="number" id="seconds">0</div>
             <div class="label">Seconds</div>
         </div>
+
     </div>
+
+    <!-- Button directly below countdown -->
+    <div class="button-container">
+        <button class="nav-btn"
+            onclick="window.location.href='https://www.example.com';">
+            Click Here
+        </button>
+    </div>
+
 </div>
 
 <script>
 const targetDate = new Date("October 31, 2026 00:00:00").getTime();
 
 function updateCountdown() {
+
     const now = new Date().getTime();
     const distance = targetDate - now;
 
@@ -102,12 +138,21 @@ function updateCountdown() {
     }
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24))
-                  / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60))
-                    / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60))
-                    / 1000);
+
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+    );
+
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
+    );
+
+    const seconds = Math.floor(
+        (distance % (1000 * 60))
+        / 1000
+    );
 
     document.getElementById("days").textContent = days;
     document.getElementById("hours").textContent = hours;
@@ -118,30 +163,6 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 </script>
-
-           <button class="nav-btn"
-        onclick="window.location.href='https://www.example.com';">
-    Click Here
-</button>
-
-<style>
-.nav-btn{
-    background:#ff0000;
-    color:white;
-    border:none;
-    padding:12px 24px;
-    font-size:18px;
-    border-radius:8px;
-    cursor:pointer;
-    box-shadow:0 0 10px red;
-    transition:0.3s;
-}
-
-.nav-btn:hover{
-    background:#cc0000;
-    transform:scale(1.05);
-}
-</style>
 
 </body>
 </html>
