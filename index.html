@@ -59,14 +59,11 @@ h1{
     text-transform:uppercase;
 }
 
-/* Button container */
+/* Button below timer */
 .button-container{
     margin-top:15px;
-    position:relative;
-    display:inline-block;
 }
 
-/* Countdown button */
 .nav-btn{
     background:#ff0000;
     color:white;
@@ -83,30 +80,6 @@ h1{
     background:#cc0000;
     transform:scale(1.05);
     box-shadow:0 0 20px red;
-}
-
-/* Close button */
-.close-btn{
-    position:absolute;
-    top:-10px;
-    right:-10px;
-    width:24px;
-    height:24px;
-    border:none;
-    border-radius:50%;
-    background:#333;
-    color:white;
-    font-size:14px;
-    font-weight:bold;
-    cursor:pointer;
-    line-height:24px;
-    text-align:center;
-    box-shadow:0 0 5px rgba(0,0,0,0.5);
-    z-index:10;
-}
-
-.close-btn:hover{
-    background:#ff0000;
 }
 </style>
 </head>
@@ -141,16 +114,12 @@ h1{
 
     </div>
 
-    <!-- Individual SP Countdown Button -->
-    <div class="button-container" id="spButtonContainer">
-
-        <button class="close-btn" onclick="closeSPButton()">✖</button>
-
+    <!-- Button directly below countdown -->
+    <div class="button-container">
         <button class="nav-btn"
             onclick="window.location.href='https://gadpayat.github.io/Individual-Countdown/';">
             👉 Click HERE to view the Individual SP Countdown
         </button>
-
     </div>
 
 </div>
@@ -190,11 +159,6 @@ function updateCountdown() {
     document.getElementById("hours").textContent = hours;
     document.getElementById("minutes").textContent = minutes;
     document.getElementById("seconds").textContent = seconds;
-}
-
-/* Hide only the SP button */
-function closeSPButton() {
-    document.getElementById("spButtonContainer").style.display = "none";
 }
 
 updateCountdown();
