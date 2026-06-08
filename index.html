@@ -81,6 +81,20 @@ h1{
     transform:scale(1.05);
     box-shadow:0 0 20px red;
 }
+
+/* Footer Signature */
+footer{
+    position:fixed;
+    bottom:5px;
+    left:50%;
+    transform:translateX(-50%);
+    width:100%;
+    text-align:center;
+    font-size:10px;
+    color:rgba(255,255,255,0.75);
+    letter-spacing:1px;
+    pointer-events:none;
+}
 </style>
 </head>
 
@@ -164,6 +178,10 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 </script>
-    
+
+<footer>
+    © 2026 GHILOUS. All Rights Reserved.
+</footer>
+
 </body>
 </html>
